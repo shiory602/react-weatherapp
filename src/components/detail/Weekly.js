@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Detail() {
+function Weekly() {
     return (
         <>
-            <h1>detail</h1>
+            <h1>weekly</h1>
         </>
     )
 }
 
-export default Detail;
+export default Weekly;
