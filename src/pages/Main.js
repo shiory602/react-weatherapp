@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import React from 'react';
-import Context from '../context/Context';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Context from '../context/Context';
 
+
+/*---------------
+| Images          |
+----------------*/
+import clearNight from '../background/clearn.jpg';
 
 /*---------------
 | Pages          |
@@ -15,20 +20,18 @@ function Main() {
 
   return (
     <BrowserRouter>
-      <Switch>
-        {/* main */}
-        <Route exact path='/'>
-          <Header />
-          <Today />
-        </Route>
-        {/* detail */}
-        <Route>
-          <Header />
-        </Route>
-      </Switch>
-      
-      
       <Wrap>
+        <Switch>
+          {/* main */}
+          <Route exact path='/'>
+              <Header />
+              <Today />
+          </Route>
+          {/* detail */}
+          <Route>
+            <Header />
+          </Route>
+        </Switch>
       </Wrap>
       <Footer />
     </BrowserRouter>
@@ -40,5 +43,8 @@ export default Main;
 
 
 const Wrap = styled.div`
-	background-image: linear-gradient(to bottom, rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.6));
+  width: 100%;
+  height: 760px;
+  background:#ddd url(${clearNight}) no-repeat center center;
+  background-size:cover;
 `

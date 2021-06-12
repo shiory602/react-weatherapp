@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import WeatherContext from '../../context/Context';
 /*---------------
 | Ant design     |
 ----------------*/
@@ -41,7 +40,7 @@ export default Header;
 
 const Head = styled(Row)`
     height: 100px;
-    margin-top: 15px;
+    padding-top: 15px;
     text-align: center;
 `
 
@@ -62,6 +61,6 @@ const Time = styled.p`
 
 const Btn = styled(Link)`
     padding: 0 10px;
-    color: gray;
+    color: #fff;
     font-size: 2rem;
 `
