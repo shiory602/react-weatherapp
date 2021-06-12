@@ -3,6 +3,11 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Context from '../context/Context';
 
+/*---------------
+| Ant design     |
+----------------*/
+import 'antd/dist/antd.css';
+import { Row, Col } from 'antd';
 
 /*---------------
 | Images          |
@@ -14,6 +19,10 @@ import clearNight from '../background/clearn.jpg';
 ----------------*/
 import Header from './main/Header';
 import Today from './main/Today';
+import Dheader from './detail/Dheader';
+import Hourly from './detail/Hourly';
+import Weekly from './detail/Weekly';
+import Forecast from './detail/Forecast';
 import Footer from '../Footer';
 
 function Main() {
@@ -28,8 +37,16 @@ function Main() {
               <Today />
           </Route>
           {/* detail */}
-          <Route>
-            <Header />
+          <Route path='/Detail'>
+            <Layout>
+              <Row>
+                <Col span={6}><Today /></Col>
+                <Col span={18}><Dheader /></Col>
+              </Row>
+              <Hourly />
+              <Weekly />
+              <Forecast />
+            </Layout>
           </Route>
         </Switch>
       </Wrap>
@@ -47,4 +64,9 @@ const Wrap = styled.div`
   height: 760px;
   background:#ddd url(${clearNight}) no-repeat center center;
   background-size:cover;
+`
+
+const Layout = styled.div`
+  margin: 50px;
+  margin-top: 0;
 `
