@@ -34,7 +34,7 @@ function Main() {
           {/* main */}
           <Route exact path='/'>
               <Header />
-              <Today />
+              <StickToday><Today /></StickToday>
           </Route>
           {/* detail */}
           <Route path='/Detail'>
@@ -64,6 +64,17 @@ const Wrap = styled.div`
   height: 760px;
   background:#ddd url(${clearNight}) no-repeat center center;
   background-size:cover;
+`
+
+const StickToday = styled.div`
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  margin: auto;
+  text-align: center;
+  /* background-color: pink; */
 `
 
 const Layout = styled.div`
