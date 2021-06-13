@@ -26,8 +26,8 @@ const Header = () => {
                         </Item>
                         <Col span={8}>
                         <Space direction="vertical">
-                            <Place>{weather.forecast.name}</Place>
-                            <Time>{weather.forecast.name}</Time>
+                            {/* <Place>{weather.forecast.name}</Place>
+                            <Time>{weather.forecast.name}</Time> */}
                         </Space>
                         </Col>
                         <Item span={8}>

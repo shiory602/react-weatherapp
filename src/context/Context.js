@@ -3,21 +3,25 @@ import React, { useState, useEffect } from "react";
 export const Context = React.createContext();
 
 export default function WeatherContext() {
-// Initialize state
-    const [currentWeater, setCurrentWeather] = useState([]);
+
+    // Initialize state
+    const [currentWeather, setCurrentWeather] = useState([]);
     const [oneCall, setOneCall] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const[city, setCity] = useState('Vancouver');
-    // const[lat, setLat] = useState('');
-    // const[lon, setLon] = useState('');
-    // const[dt, setDt] = useState('');
+    const[lon, setLon] = useState('-123.1193');
+    const[lat, setLat] = useState('49.2497');
+    const[dt, setDt] = useState('1623554321');
 
-    function changeCity(cityName) {
-        setCity(cityName)
+    function changeCity(cityName, lon, lat, dt) {
+        setCity(cityName);
+        setLon(lon);
+        setLat(lat);
+        setDt(dt);
     }
 
-// Fetch data
+    // Fetch data
     useEffect(() => {
         /*--------------------------------------
         Weather API reference:
@@ -28,19 +32,22 @@ export default function WeatherContext() {
             baseurl: "https://api.openweathermap.org/data/2.5/"
         }
         setIsLoading(true);
-    
+
         fetch(`${api.baseurl}weather?q=${city}&units=metric&appid=${api.key}`)
         .then(res => res.json())
         .then(data => setCurrentWeather(data))
         .catch(error => console.log(`error ${error}`))
 
-        console.log(currentWeater)
+        console.log(currentWeather);
+        
+        fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
+        .then(res => res.json())
+        .then(data => setOneCall(data))
+        .catch(error => console.log(`error ${error}`))
 
-        // fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
-        // .then(res => res.json())
-        // .then(data => setOneCall(data))
-        // .catch(error => console.log(`error ${error}`))
-    })
+        console.log(oneCall);
+
+    }, [city])
     
     return (
         <Context.Provider value={{ currentWeater, oneCall, isLoading, changeCity }}>
