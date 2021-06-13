@@ -1,10 +1,11 @@
-import React from 'react';
-import { SmileOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
 
-function Today() {
+function Today(props) {
+    const [icon, setIcon] = useState(`http://openweathermap.org/img/w/${props.currentWeather.weather[0].icon}.png`);
+    console.log(icon)
     return (
         <>
-            <h1><SmileOutlined /></h1>
+            <img src={icon} width="100"/>
             <h3>
                 34°
                 <span>/</span>
