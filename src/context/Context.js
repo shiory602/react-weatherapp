@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-const Context = React.createContext();
+export const Context = React.createContext();
 
-function WeatherContext() {
+export default function WeatherContext() {
 // Initialize state
     const [currentWeater, setCurrentWeather] = useState([]);
     const [oneCall, setOneCall] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const[city, setCity] = useState('Vancouver');
-    const[lat, setLat] = useState('');
-    const[lon, setLon] = useState('');
-    const[dt, setDt] = useState('');
+    // const[lat, setLat] = useState('');
+    // const[lon, setLon] = useState('');
+    // const[dt, setDt] = useState('');
 
     function changeCity(cityName) {
         setCity(cityName)
@@ -34,6 +34,8 @@ function WeatherContext() {
         .then(data => setCurrentWeather(data))
         .catch(error => console.log(`error ${error}`))
 
+        console.log(currentWeater)
+
         // fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
         // .then(res => res.json())
         // .then(data => setOneCall(data))
@@ -41,10 +43,8 @@ function WeatherContext() {
     })
     
     return (
-        <WeatherContext.Provider value={{ currentWeater, oneCall, isLoading, changeCity }}>
+        <Context.Provider value={{ currentWeater, oneCall, isLoading, changeCity }}>
             {this.children}
-        </WeatherContext.Provider>
+        </Context.Provider>
     );
 }
-
-export default Context;
