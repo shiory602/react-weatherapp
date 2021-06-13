@@ -6,20 +6,20 @@ export default function WeatherContext() {
 
     // Initialize state
     const [currentWeather, setCurrentWeather] = useState([]);
-    const [oneCall, setOneCall] = useState([]);
+    // const [oneCall, setOneCall] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const[city, setCity] = useState('Vancouver');
-    const[lon, setLon] = useState('-123.1193');
-    const[lat, setLat] = useState('49.2497');
-    const[dt, setDt] = useState('1623554321');
+    // const[lon, setLon] = useState('-123.1193');
+    // const[lat, setLat] = useState('49.2497');
+    // const[dt, setDt] = useState('1623554321');
 
-    function changeCity(cityName, lon, lat, dt) {
-        setCity(cityName);
-        setLon(lon);
-        setLat(lat);
-        setDt(dt);
-    }
+    // function changeCity(cityName, lon, lat, dt) {
+    //     setCity(cityName);
+    //     setLon(lon);
+    //     setLat(lat);
+    //     setDt(dt);
+    // }
 
     // Fetch data
     useEffect(() => {
@@ -38,20 +38,24 @@ export default function WeatherContext() {
         .then(data => setCurrentWeather(data))
         .catch(error => console.log(`error ${error}`))
 
-        console.log(currentWeather);
+        console.log(currentWeather, isLoading);
         
-        fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
-        .then(res => res.json())
-        .then(data => setOneCall(data))
-        .catch(error => console.log(`error ${error}`))
+        // fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
+        // .then(res => res.json())
+        // .then(data => setOneCall(data))
+        // .catch(error => console.log(`error ${error}`))
 
-        console.log(oneCall);
+        // console.log(oneCall);
 
-    }, [city])
+        setIsLoading(false);
+    }, [currentWeather])
     
     return (
-        <Context.Provider value={{ currentWeater, oneCall, isLoading, changeCity }}>
+        <Context.Provider value={{ currentWeather, setCity }}>
             {this.children}
         </Context.Provider>
     );
 }
+
+
+// , oneCall, isLoading, changeCity

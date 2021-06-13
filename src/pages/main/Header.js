@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <Context.Consumer>
             {(weather) => {
-                console.log(weather)
+                // console.log(weather)
                 return (
                     <Head>
                         <Item span={8}>
@@ -26,8 +26,8 @@ const Header = () => {
                         </Item>
                         <Col span={8}>
                         <Space direction="vertical">
-                            {/* <Place>{weather.forecast.name}</Place>
-                            <Time>{weather.forecast.name}</Time> */}
+                            <Place>{weather}</Place>
+                            <Time>{weather}</Time>
                         </Space>
                         </Col>
                         <Item span={8}>
