@@ -4,10 +4,14 @@ const Context = React.createContext();
 
 function WeatherContext() {
 // Initialize state
-    const [data, setData] = useState([]);
+    const [currentWeater, setCurrentWeather] = useState([]);
+    const [oneCall, setOneCall] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const[city, setCity] = useState('Vancouver');
+    const[lat, setLat] = useState('');
+    const[lon, setLon] = useState('');
+    const[dt, setDt] = useState('');
 
     function changeCity(cityName) {
         setCity(cityName)
@@ -27,12 +31,17 @@ function WeatherContext() {
     
         fetch(`${api.baseurl}weather?q=${city}&units=metric&appid=${api.key}`)
         .then(res => res.json())
-        .then(data => setData(data))
+        .then(data => setCurrentWeather(data))
         .catch(error => console.log(`error ${error}`))
+
+        // fetch(`${api.baseurl}onecall?lat=${lat}&lon=${lon}&date=${dt}&exclude=current&units=metric&appid=${api.key}`)
+        // .then(res => res.json())
+        // .then(data => setOneCall(data))
+        // .catch(error => console.log(`error ${error}`))
     })
     
     return (
-        <WeatherContext.Provider value={{ data, isLoading, changeCity }}>
+        <WeatherContext.Provider value={{ currentWeater, oneCall, isLoading, changeCity }}>
             {this.children}
         </WeatherContext.Provider>
     );
