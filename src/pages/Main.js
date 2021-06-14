@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import WeatherContextProvider from "../context/Context";
 
 /*---------------
 | Ant design     |
@@ -27,30 +28,32 @@ import Footer from '../Footer';
 function Main() {
 
   return (
-    <BrowserRouter>
-      <Wrap>
-        <Switch>
-          {/* main */}
-          <Route exact path='/'>
-              <Header />
-              <StickToday><Today /></StickToday>
-          </Route>
-          {/* detail */}
-          <Route path='/Detail'>
-            <Layout>
-              <Row>
-                <Col span={6}><Today /></Col>
-                <Col span={18}><Dheader /></Col>
-              </Row>
-              <Hourly />
-              <Weekly />
-              <Forecast />
-            </Layout>
-          </Route>
-        </Switch>
-      </Wrap>
-      <Footer />
-    </BrowserRouter>
+    <WeatherContextProvider>
+      <BrowserRouter>
+        <Wrap>
+          <Switch>
+            {/* main */}
+            <Route exact path='/'>
+                <Header />
+                <StickToday><Today /></StickToday>
+            </Route>
+            {/* detail */}
+            <Route path='/Detail'>
+              <Layout>
+                <Row>
+                  <Col span={6}><Today /></Col>
+                  <Col span={18}><Dheader /></Col>
+                </Row>
+                <Hourly />
+                <Weekly />
+                <Forecast />
+              </Layout>
+            </Route>
+          </Switch>
+        </Wrap>
+        <Footer />
+      </BrowserRouter>
+    </WeatherContextProvider>
   );
 }
 

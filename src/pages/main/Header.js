@@ -10,7 +10,6 @@ import { Row, Col, Input, Space } from 'antd';
 
 const Header = () => {
     const { currentWeather } = useWeatherContext();
-    console.log(currentWeather);
 
     const { Search } = Input;
     const onSearch = value => console.log(value);
@@ -22,8 +21,8 @@ const Header = () => {
             </Item>
             <Col span={8}>
             <Space direction="vertical">
-                {/* <Place>{weathers}</Place> */}
-                {/* <Time>{weathers}</Time> */}
+                <Place>{currentWeather.name}</Place>
+                <Time>{currentWeather}</Time>
             </Space>
             </Col>
             <Item span={8}>
