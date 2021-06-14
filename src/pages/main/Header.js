@@ -16,26 +16,22 @@ const Header = () => {
     const onSearch = value => console.log(value);
     
     return (
-        <>
-            return (
-                <Head>
-                    <Item span={8}>
-                        <Search placeholder="Search for a city..." allowClear onSearch={onSearch} style={{ width: 200 }} />
-                    </Item>
-                    <Col span={8}>
-                    <Space direction="vertical">
-                        {/* <Place>{weathers}</Place> */}
-                        {/* <Time>{weathers}</Time> */}
-                    </Space>
-                    </Col>
-                    <Item span={8}>
-                        <Btn to='/Detail'>
-                            +
-                        </Btn>
-                    </Item>
-                </Head>
-            )
-        </>
+        <Head>
+            <Item span={8}>
+                <Search placeholder="Search for a city..." allowClear onSearch={onSearch} style={{ width: 200 }} />
+            </Item>
+            <Col span={8}>
+            <Space direction="vertical">
+                {/* <Place>{weathers}</Place> */}
+                {/* <Time>{weathers}</Time> */}
+            </Space>
+            </Col>
+            <Item span={8}>
+                <Btn to='/Detail'>
+                    +
+                </Btn>
+            </Item>
+        </Head>
     )
 }
 

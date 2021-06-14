@@ -1,5 +1,5 @@
 import React from 'react';
-import useWeatherContext from '../../context/Context';
+import { useWeatherContext } from '../../context/Context';
 
 function Today() {
     const { weathers } = useWeatherContext();
@@ -7,17 +7,13 @@ function Today() {
     let icon = `http://openweathermap.org/img/w/${weathers.weather[0].icon}.png`;
     return (
         <>
-            return (
-                <>
-                <img src={icon} width="100"/>
-                <h3>
-                    34°
-                    <span>/</span>
-                    27°
-                </h3>
-                <h1>30°</h1>
-                </>
-            )
+            <img src={icon} width="100"/>
+            <h3>
+                34°
+                <span>/</span>
+                27°
+            </h3>
+            <h1>30°</h1>
         </>
     )
 }

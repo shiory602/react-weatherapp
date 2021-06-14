@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from "react";
 
 const WeatherContext = createContext();
 
-const WeatherProvider = ({ children }) => {
+const WeatherContextProvider = ({ children }) => {
     // Initialize state
     const [currentWeather, setCurrentWeather] = useState([]);
     // const [oneCall, setOneCall] = useState([]);
@@ -59,4 +59,4 @@ const WeatherProvider = ({ children }) => {
 
 const useWeatherContext = () => useContext(WeatherContext);
 
-export { useWeatherContext, WeatherProvider as default };
+export { useWeatherContext, WeatherContextProvider as default };
