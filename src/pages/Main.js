@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import WeatherContextProvider from "../context/Context";
+// import WeatherContextProvider from "../context/Context";
 
 /*---------------
 | Ant design     |
@@ -28,14 +28,16 @@ import Footer from '../Footer';
 function Main() {
 
   return (
-    <WeatherContextProvider>
+    // <WeatherContextProvider>
       <BrowserRouter>
         <Wrap>
           <Switch>
             {/* main */}
             <Route exact path='/'>
+              <TodayLayout>
                 <Header />
                 <StickToday><Today /></StickToday>
+              </TodayLayout>
             </Route>
             {/* detail */}
             <Route path='/Detail'>
@@ -53,7 +55,7 @@ function Main() {
         </Wrap>
         <Footer />
       </BrowserRouter>
-    </WeatherContextProvider>
+    // </WeatherContextProvider>
   );
 }
 
@@ -63,20 +65,18 @@ export default Main;
 
 const Wrap = styled.div`
   width: 100%;
-  height: 760px;
   background:#ddd url(${clearNight}) no-repeat center center;
   background-size:cover;
 `
+const TodayLayout = styled.div`
+height: 90vh;
+`
 
 const StickToday = styled.div`
-  width: 400px;
-  height: 400px;
   position: fixed;
-  bottom: 50px;
+  bottom: 280px;
   left: 50px;
   margin: auto;
-  text-align: center;
-  /* background-color: pink; */
 `
 
 const Layout = styled.div`

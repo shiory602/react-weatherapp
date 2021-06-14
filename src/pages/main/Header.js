@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWeatherContext } from '../../context/Context';
+// import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 /*---------------
@@ -9,7 +9,7 @@ import 'antd/dist/antd.css';
 import { Row, Col, Input, Space } from 'antd';
 
 const Header = () => {
-    const { currentWeather } = useWeatherContext();
+    // const { currentWeather } = useWeatherContext();
 
     const { Search } = Input;
     const onSearch = value => console.log(value);
@@ -21,8 +21,8 @@ const Header = () => {
             </Item>
             <Col span={8}>
             <Space direction="vertical">
-                <Place>{currentWeather.name}</Place>
-                <Time>{currentWeather}</Time>
+                <Place>Vancouver</Place>
+                <Time>12:00</Time>
             </Space>
             </Col>
             <Item span={8}>
@@ -38,8 +38,11 @@ export default Header;
 
 
 const Head = styled(Row)`
-    height: 100px;
-    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 `
 
@@ -49,13 +52,15 @@ const Item = styled(Col)`
 
 const Place = styled.p`
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 54px;
+    font-weight: 800;
+    color: whitesmoke;
     `
 
 const Time = styled.p`
     margin: 0;
-    font-size: 2rem;
+    font-size: 64px;
+    color: whitesmoke;
 `
 
 const Btn = styled(Link)`

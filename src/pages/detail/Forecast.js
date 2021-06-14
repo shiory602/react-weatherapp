@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 /*---------------
 | Ant design     |
 ----------------*/
@@ -8,22 +9,43 @@ import { Collapse } from 'antd';
 const { Panel } = Collapse;
 
 const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
+    Vancouver, Canada
+    🌤 Partly Cloudy
+    29 ℃
+    Wind: 6.1 kmph
+    Precip: 0.00 mm
+    Pressure: 1025.0 mb
 `;
 
 const Forecast = () => {
     return (
-        <>
-            <h1>forecast</h1>
+        <Layout>
+            <Text>forecast</Text>
             <Collapse defaultActiveKey={['1']} >
                 <Panel header="More Detail" key="1">
-                <p>{text}</p>
+                <Detail>{text}</Detail>
                 </Panel>
-        </Collapse>
-        </>
+            </Collapse>
+        </Layout>
     )
 }
 
 export default Forecast;
+
+const Layout = styled.div`
+    padding-bottom: 50px;
+`
+
+
+const Text = styled.h3`
+    font-size: 36px;
+    line-height: 100px;
+    color: whitesmoke;
+    margin: 0;
+`
+
+const Detail = styled.p`
+    margin: 0;
+    font-size: 24px;
+    color: gray;
+`

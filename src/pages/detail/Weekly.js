@@ -1,9 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 /*---------------
 | Ant design     |
 ----------------*/
 import 'antd/dist/antd.css';
-import { Card } from 'antd';
+import { Row, Col, Card } from 'antd';
 
 // Weekly date function for bottom-section -----------------------------------
 // function dateBuilder(d) {
@@ -15,19 +16,125 @@ import { Card } from 'antd';
 function Weekly() {
     return (
         <>
-            <h1>weekly</h1>
-            <Card type="inner" title="Monday">
-            Monday
+            <Text>Weekly</Text>
+            <Card type="inner">
+                <Layout>
+                    <Detail span={8}>Monday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
             </Card>
             <Card
             style={{ marginTop: 16 }}
             type="inner"
-            title="Tuesday"
             >
-            Tuesday
+                <Layout>
+                    <Detail span={8}>Tuesday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
+            </Card>
+            <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            >
+                <Layout>
+                    <Detail span={8}>Wednesday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
+            </Card>
+            <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            >
+                <Layout>
+                    <Detail span={8}>Thursday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
+            </Card>
+            <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            >
+                <Layout>
+                    <Detail span={8}>Friday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
+            </Card>
+            <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            >
+                <Layout>
+                    <Detail span={8}>Saturday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
+            </Card>
+            <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            >
+                <Layout>
+                    <Detail span={8}>Sunday</Detail>
+                    <Detail span={8}>⛅️</Detail>
+                    <Detail span={8}>
+                        <span>34°</span>
+                        /
+                        <span>27°</span>
+                    </Detail>
+                </Layout>
             </Card>
         </>
     )
 }
 
 export default Weekly;
+
+const Layout = styled(Row)`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+`
+
+const Text = styled.h3`
+    font-size: 36px;
+    line-height: 100px;
+    color: whitesmoke;
+    margin: 0;
+`
+
+const Detail = styled(Col)`
+    margin: 0;
+    font-size: 24px;
+    color: gray;
+`

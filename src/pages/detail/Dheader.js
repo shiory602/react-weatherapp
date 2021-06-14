@@ -31,8 +31,11 @@ const Dheader = () => {
 export default Dheader;
 
 const Head = styled(Row)`
-    height: 100px;
-    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 `
 
@@ -42,13 +45,15 @@ const Item = styled(Col)`
 
 const Place = styled.p`
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 54px;
+    font-weight: 800;
+    color: whitesmoke;
     `
 
 const Time = styled.p`
     margin: 0;
-    font-size: 2rem;
+    font-size: 64px;
+    color: whitesmoke;
 `
 
 const Btn = styled(Link)`
