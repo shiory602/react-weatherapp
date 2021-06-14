@@ -1,5 +1,5 @@
 import React from 'react';
-import { Context } from '../../context/Context';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 /*---------------
@@ -9,36 +9,33 @@ import 'antd/dist/antd.css';
 import { Row, Col, Input, Space } from 'antd';
 
 const Header = () => {
+    const { currentWeather } = useWeatherContext();
+    console.log(currentWeather);
 
     const { Search } = Input;
-
     const onSearch = value => console.log(value);
     
-
     return (
-        <Context.Consumer>
-            {(weather) => {
-                // console.log(weather)
-                return (
-                    <Head>
-                        <Item span={8}>
-                            <Search placeholder="Search for a city..." allowClear onSearch={onSearch} style={{ width: 200 }} />
-                        </Item>
-                        <Col span={8}>
-                        <Space direction="vertical">
-                            <Place>{weather}</Place>
-                            <Time>{weather}</Time>
-                        </Space>
-                        </Col>
-                        <Item span={8}>
-                            <Btn to='/Detail'>
-                                +
-                            </Btn>
-                        </Item>
-                    </Head>
-                )
-            }}
-        </Context.Consumer>
+        <>
+            return (
+                <Head>
+                    <Item span={8}>
+                        <Search placeholder="Search for a city..." allowClear onSearch={onSearch} style={{ width: 200 }} />
+                    </Item>
+                    <Col span={8}>
+                    <Space direction="vertical">
+                        {/* <Place>{weathers}</Place> */}
+                        {/* <Time>{weathers}</Time> */}
+                    </Space>
+                    </Col>
+                    <Item span={8}>
+                        <Btn to='/Detail'>
+                            +
+                        </Btn>
+                    </Item>
+                </Head>
+            )
+        </>
     )
 }
 
