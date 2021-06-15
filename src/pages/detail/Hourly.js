@@ -1,68 +1,70 @@
 import React from 'react';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 /*---------------
 | Ant design     |
 ----------------*/
 import 'antd/dist/antd.css';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Divider } from 'antd';
 
 function Hourly() {
+    // const { currentWeather } = useWeatherContext();
     return (
         <>
-            <Text>Hourly</Text>
+            <Divider orientation="left"><Text>Hourly</Text></Divider>
             <div className="site-card-wrapper">
                 <Row gutter={16}>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>12:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>13:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>14:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>15:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>16:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={8}>12:00</Detail>
-                                <Detail span={8}>⛅️</Detail>
-                                <Detail span={8}>27°</Detail>
+                                <Detail span={15}>17:00</Detail>
+                                <Detail span={10}>⛅️</Detail>
+                                <Detail span={10}>27°</Detail>
                             </Layout>
                         </Card>
                     </Col>

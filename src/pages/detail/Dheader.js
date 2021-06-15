@@ -1,4 +1,5 @@
 import React from 'react';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 /*---------------
@@ -9,16 +10,36 @@ import { Row, Col, Space } from 'antd';
 
 
 const Dheader = () => {
+    // const { currentWeather } = useWeatherContext();
+    let city = 'Vancouver'
+    
+    var date = new Date();
+        var datestr = date.toLocaleDateString('en-US', {
+            weekday: "long",
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+            // timeZone: currentWeather.timezone, // set timezone
+        })
+
+        // getting time
+        var timestr = date.toLocaleString("en-US", {
+            timeStyle: "short", // 12:00
+            hourCycle: "h24",
+            // timeZone: currentWeather.timezone,
+        })
+        
     return (
         <>
             <Head>
                 <Col span={16}>
                 <Space direction="vertical">
-                    <Place>Vancouver</Place>
-                    <Time>10:12 AM</Time>
+                <Place>{city}</Place>
+                <Time>{datestr}</Time>
+                <Time>{timestr}</Time>
                 </Space>
                 </Col>
-                <Item span={8}>
+                <Item span={6}>
                     <Btn  to='/'>
                         -
                     </Btn>
@@ -52,12 +73,15 @@ const Place = styled.p`
 
 const Time = styled.p`
     margin: 0;
-    font-size: 64px;
+    font-size: 48px;
     color: whitesmoke;
 `
 
 const Btn = styled(Link)`
-    padding: 0 10px;
+    margin-left: 70px;
+    padding:0 15px 3px;
     color: #fff;
     font-size: 2rem;
+    background-color: rgba(250, 250, 250, .4);
+    border-radius: 50%
 `

@@ -1,26 +1,28 @@
 import React from 'react';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 /*---------------
 | Ant design     |
 ----------------*/
 import 'antd/dist/antd.css';
-import { Collapse } from 'antd';
+import { Collapse, Divider } from 'antd';
 
 const { Panel } = Collapse;
 
 const text = `
-    Vancouver, Canada
-    🌤 Partly Cloudy
-    29 ℃
-    Wind: 6.1 kmph
-    Precip: 0.00 mm
+    Vancouver, Canada / 
+    🌤 Partly Cloudy / 
+    Temperature: 29 ℃ / 
+    Wind: 6.1 kmph / 
+    Precip: 0.00 mm / 
     Pressure: 1025.0 mb
 `;
 
 const Forecast = () => {
+    // const { currentWeather } = useWeatherContext();
     return (
         <Layout>
-            <Text>forecast</Text>
+            <Divider orientation="left"><Text>Forecast</Text></Divider>
             <Collapse defaultActiveKey={['1']} >
                 <Panel header="More Detail" key="1">
                 <Detail>{text}</Detail>

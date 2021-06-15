@@ -23,8 +23,8 @@ function Today() {
 export default Today;
 
 const Outline = styled.div`
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
     background-color: rgba(250, 250, 250, .4);
     display: flex;
     flex-direction: column;

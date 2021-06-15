@@ -1,10 +1,11 @@
 import React from 'react';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 /*---------------
 | Ant design     |
 ----------------*/
 import 'antd/dist/antd.css';
-import { Row, Col, Card } from 'antd';
+import { Row, Col, Card, Divider } from 'antd';
 
 // Weekly date function for bottom-section -----------------------------------
 // function dateBuilder(d) {
@@ -14,9 +15,10 @@ import { Row, Col, Card } from 'antd';
 // }
 
 function Weekly() {
+    // const { currentWeather } = useWeatherContext();
     return (
         <>
-            <Text>Weekly</Text>
+            <Divider orientation="left"><Text>Weekly</Text></Divider>
             <Card type="inner">
                 <Layout>
                     <Detail span={8}>Monday</Detail>

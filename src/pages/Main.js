@@ -74,7 +74,7 @@ height: 90vh;
 
 const StickToday = styled.div`
   position: fixed;
-  bottom: 280px;
+  bottom: 20%;
   left: 50px;
   margin: auto;
 `
