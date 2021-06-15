@@ -1,15 +1,14 @@
 import React from 'react';
-// import { useWeatherContext } from '../../context/Context';
+import { useWeatherContext } from '../../context/Context';
 import styled from 'styled-components';
 
 function Today() {
-    // const { weathers } = useWeatherContext();
+    const { weathers } = useWeatherContext();
     // console.log(weathers)
-    // let icon = `http://openweathermap.org/img/w/${weathers.weather[0].icon}.png`;
+    let icon = `http://openweathermap.org/img/w/${weathers.weather[0].icon}.png`;
     return (
         <Outline>
-            {/* <img src={icon} width="100"/> */}
-            <Text>🌤</Text>
+            <Text><img src={icon} width="100"/></Text>
             <MaxMin>
                 <Max>34°</Max>
                 /

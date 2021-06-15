@@ -1,44 +1,44 @@
 {
     "coord": {
-        "lon": -122.08,
-        "lat": 37.39
+    "lon": -123.1193,
+    "lat": 49.2497
     },
     "weather": [
-        {
-        "id": 800,
-        "main": "Clear",
-        "description": "clear sky",
-        "icon": "01d"
-        }
+    {
+    "id": 803,
+    "main": "Clouds",
+    "description": "broken clouds",
+    "icon": "04d"
+    }
     ],
     "base": "stations",
     "main": {
-        "temp": 282.55,
-        "feels_like": 281.86,
-        "temp_min": 280.37,
-        "temp_max": 284.26,
-        "pressure": 1023,
-        "humidity": 100
+    "temp": 17.85,
+    "feels_like": 17.78,
+    "temp_min": 15.57,
+    "temp_max": 19.75,
+    "pressure": 1016,
+    "humidity": 80
     },
-    "visibility": 16093,
+    "visibility": 10000,
     "wind": {
-        "speed": 1.5,
-        "deg": 350
+    "speed": 2.68,
+    "deg": 103,
+    "gust": 7.15
     },
     "clouds": {
-        "all": 1
+    "all": 75
     },
-    "dt": 1560350645,
+    "dt": 1623718282,
     "sys": {
-        "type": 1,
-        "id": 5122,
-        "message": 0.0139,
-        "country": "US",
-        "sunrise": 1560343627,
-        "sunset": 1560396563
+    "type": 2,
+    "id": 2011597,
+    "country": "CA",
+    "sunrise": 1623672394,
+    "sunset": 1623730754
     },
     "timezone": -25200,
-    "id": 420006353,
-    "name": "Mountain View",
+    "id": 6173331,
+    "name": "Vancouver",
     "cod": 200
-    }                         
+    }

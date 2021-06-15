@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import WeatherContextProvider from "../context/Context";
+import WeatherContextProvider from "../context/Context";
 
 /*---------------
 | Ant design     |
@@ -28,7 +28,7 @@ import Footer from '../Footer';
 function Main() {
 
   return (
-    // <WeatherContextProvider>
+    <WeatherContextProvider>
       <BrowserRouter>
         <Wrap>
           <Switch>
@@ -55,7 +55,7 @@ function Main() {
         </Wrap>
         <Footer />
       </BrowserRouter>
-    // </WeatherContextProvider>
+    </WeatherContextProvider>
   );
 }
 
