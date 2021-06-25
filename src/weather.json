@@ -13,12 +13,12 @@
     ],
     "base": "stations",
     "main": {
-    "temp": 17.85,
-    "feels_like": 17.78,
-    "temp_min": 15.57,
-    "temp_max": 19.75,
-    "pressure": 1016,
-    "humidity": 80
+        "temp": 17.85,
+        "feels_like": 17.78,
+        "temp_min": 15.57,
+        "temp_max": 19.75,
+        "pressure": 1016,
+        "humidity": 80
     },
     "visibility": 10000,
     "wind": {

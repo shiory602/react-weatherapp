@@ -5,14 +5,6 @@
     "timezone_offset": -25200,
     "minutely": [
     {
-    "dt": 1623718620,
-    "precipitation": 0
-    },
-    {
-    "dt": 1623718680,
-    "precipitation": 0
-    },
-    {
     "dt": 1623718740,
     "precipitation": 0
     },
@@ -247,16 +239,24 @@
     {
     "dt": 1623722220,
     "precipitation": 0
+    },
+    {
+    "dt": 1623722280,
+    "precipitation": 0
+    },
+    {
+    "dt": 1623722340,
+    "precipitation": 0
     }
     ],
     "hourly": [
     {
     "dt": 1623715200,
-    "temp": 17.75,
-    "feels_like": 17.59,
+    "temp": 17.76,
+    "feels_like": 17.6,
     "pressure": 1016,
     "humidity": 77,
-    "dew_point": 13.67,
+    "dew_point": 13.68,
     "uvi": 2.41,
     "clouds": 80,
     "visibility": 10000,
@@ -278,11 +278,11 @@
     },
     {
     "dt": 1623718800,
-    "temp": 17.88,
-    "feels_like": 17.79,
+    "temp": 17.89,
+    "feels_like": 17.8,
     "pressure": 1016,
     "humidity": 79,
-    "dew_point": 14.19,
+    "dew_point": 14.2,
     "uvi": 1.09,
     "clouds": 75,
     "visibility": 10000,
@@ -301,11 +301,11 @@
     },
     {
     "dt": 1623722400,
-    "temp": 17.58,
-    "feels_like": 17.43,
+    "temp": 17.59,
+    "feels_like": 17.44,
     "pressure": 1016,
     "humidity": 78,
-    "dew_point": 13.7,
+    "dew_point": 13.71,
     "uvi": 0.48,
     "clouds": 80,
     "visibility": 10000,
@@ -1426,15 +1426,15 @@
     "temp": {
     "day": 16.1,
     "min": 13.12,
-    "max": 17.88,
+    "max": 17.89,
     "night": 13.12,
-    "eve": 17.58,
+    "eve": 17.59,
     "morn": 13.55
     },
     "feels_like": {
     "day": 15.96,
     "night": 12.89,
-    "eve": 17.43,
+    "eve": 17.44,
     "morn": 13.55
     },
     "pressure": 1016,

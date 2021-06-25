@@ -9,8 +9,7 @@ import 'antd/dist/antd.css';
 import { Row, Col, Input, Space } from 'antd';
 
 const Header = () => {
-    // const { currentWeather } = useWeatherContext();
-    let city = 'Vancouver'
+    const { currentWeather, setCity } = useWeatherContext();
     
     var date = new Date();
         var datestr = date.toLocaleDateString('en-US', {
@@ -18,18 +17,18 @@ const Header = () => {
             day: '2-digit',
             month: 'long',
             year: 'numeric',
-            // timeZone: currentWeather.timezone, // set timezone
+            // timeZone: currentWeather.length !== 0 && currentWeather.timezone, // set timezone
         })
 
         // getting time
         var timestr = date.toLocaleString("en-US", {
             timeStyle: "short", // 12:00
             hourCycle: "h24",
-            // timeZone: currentWeather.timezone,
+            // timeZone: currentWeather.length !== 0 && currentWeather.timezone,
         })
 
     const { Search } = Input;
-    const onSearch = value => console.log(value);
+    const onSearch = value => setCity(value);
 
     return (
         <Head>
@@ -38,7 +37,7 @@ const Header = () => {
             </Item>
             <Col span={12}>
             <Space direction="vertical">
-                <Place>{city}</Place>
+                <Place>{currentWeather.length !== 0 && currentWeather.name}</Place>
                 <Time>{datestr}</Time>
                 <Time>{timestr}</Time>
             </Space>

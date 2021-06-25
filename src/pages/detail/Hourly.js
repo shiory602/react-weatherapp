@@ -8,8 +8,10 @@ import 'antd/dist/antd.css';
 import { Card, Col, Row, Divider } from 'antd';
 
 function Hourly() {
-    // const { currentWeather } = useWeatherContext();
+    const { oneCall } = useWeatherContext();
     return (
+        <>
+        {oneCall.length !== 0 && (
         <>
             <Divider orientation="left"><Text>Hourly</Text></Divider>
             <div className="site-card-wrapper">
@@ -17,7 +19,7 @@ function Hourly() {
                     <Col span={4}>
                         <Card bordered={false}>
                             <Layout>
-                                <Detail span={15}>12:00</Detail>
+                                <Detail span={15}>{oneCall}</Detail>
                                 <Detail span={10}>⛅️</Detail>
                                 <Detail span={10}>27°</Detail>
                             </Layout>
@@ -70,6 +72,8 @@ function Hourly() {
                     </Col>
                 </Row>
             </div>
+        </>
+        )}
         </>
     )
 }

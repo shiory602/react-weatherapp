@@ -8,10 +8,8 @@ import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Row, Col, Space } from 'antd';
 
-
 const Dheader = () => {
-    // const { currentWeather } = useWeatherContext();
-    let city = 'Vancouver'
+    const { currentWeather } = useWeatherContext();
     
     var date = new Date();
         var datestr = date.toLocaleDateString('en-US', {
@@ -34,7 +32,7 @@ const Dheader = () => {
             <Head>
                 <Col span={16}>
                 <Space direction="vertical">
-                <Place>{city}</Place>
+                <Place>{currentWeather.length !== 0 && currentWeather.name}</Place>
                 <Time>{datestr}</Time>
                 <Time>{timestr}</Time>
                 </Space>
